@@ -41,6 +41,42 @@ namespace UdayChinhamoraWebsite.Controllers
         }
 
 
+        public IActionResult Student(int accessLevel)
+        {
+            ViewBag.AccessLevel = accessLevel;
+            var student1 = new StudentViewModel
+            {
+                FirstName = "Carl",
+                LastName = "Phillips",
+                Grade = "A"
+            };
+            var student2 = new StudentViewModel
+            {
+                FirstName = "Liam",
+                LastName = "Clark",
+                Grade = "B"
+            };
+            var student3 = new StudentViewModel
+            {
+                FirstName = "Mark",
+                LastName = "Mickelson",
+                Grade = "B"
+            };
+            var student4 = new StudentViewModel
+            {
+                FirstName = "Harry",
+                LastName = "Potter",
+                Grade = "A"
+            };
+
+            List<StudentViewModel> students = new List<StudentViewModel>();
+            students.Add(student1);
+            students.Add(student2);
+            students.Add(student3);
+            students.Add(student4);
+
+            return View(students);
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
