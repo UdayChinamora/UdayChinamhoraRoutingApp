@@ -1,5 +1,9 @@
 ﻿@model List<UdayChinhamoraWebsite.Models.StudentViewModel>
 
+@{
+    ViewData["Title"] = "Student";
+    int accesslevel = ViewBag.AccessLevel;
+}
 
 
 <!DOCTYPE html>
@@ -15,7 +19,7 @@
 <div class="row">
     <div class="col-md-4">
         <div class="form-group">
-            @if (ViewBag.AccessLevel >= 8)
+            @if (accesslevel >= 8)
             {
                 <label>Hello Admin</label>
             }
@@ -23,11 +27,11 @@
             {
                 <div>
                     <table>
-                        @if (ViewBag.AccessLevel <= 2)
+                            @if (accesslevel <= 2)
                         {
                             <label>You do not have a sufficient access level to view this data.</label>
                         }
-                        else if (ViewBag.AccessLevel >= 2 && ViewBag.AccessLevel <= 8)
+                            else if (accesslevel >= 2 && accesslevel <= 8)
                         {
                             <tr>
                                 <th> First Name: &nbsp;</th>
@@ -55,7 +59,7 @@
 </div>
 
 <div>
-    <a asp-controller="Student" asp-action="Details">Back to List</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><b>Back To Homepage</b></a>
 </div>
 
 </body>
