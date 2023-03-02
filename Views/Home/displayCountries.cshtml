@@ -1,39 +1,207 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.popuptext {
+  display: none;
+  color: white;
+  position: absolute;
+  top: 100px;
+  left: 400px;
+  padding: 50px;
+  border: solid 1px #ddd;
+  background: green;
+  width: 20%;
+}
+
+.tooltip .tooltiptext {
+ display: none;
+  color: white;
+  position: absolute;
+  top: 100px;
+  left: 400px;
+  padding: 50px;
+  border: solid 1px #ddd;
+  background: green;
+  width: 20%;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+<script>
+
+function myFunction(e) {
+
+  var x = e.pageX;
+  var y = e.pageY;
+  $("#myPopup").css({
+    left: x
+  });
+  $("#myPopup").css({
+    top: y
+  });
+  $("#myPopup").show();
+
+}
 
 
-
-
+</script>
 </head>
-
 <body>
 
-<h3>@ViewBag.Title</h3>
+<!-- Header -->
+<div class="header" id="myHeader">
+  <h1>@ViewBag.Title</h1>
+  <p>Click on the buttons to change the grid view.</p>
+  <button class="btn" onclick="one()">1</button>
+  <button class="btn active" onclick="two()">2</button>
+  <button class="btn" onclick="four()">4</button>
+</div>
 
-<p>@ViewBag.Description</p>
-
-<img src="C:\Downloads\FB_IMG_1655247217318.jpg" alt="nbgg">
-
-
-    <div>
-        <dl>
-            <dt>Name:</dt>
-            <dd>@ViewBag.UserNow.Name</dd>
-            <dt>ID:</dt>
-            <dd>@ViewBag.UserNow.ID</dd>
-          
+<!-- Photo Grid -->
+<div class="row"> 
+ <div class="column">
+   <div class="popup">
+  <img src="https://cdn.britannica.com/68/7068-004-7848FEB4/Flag-Canada.jpg" onmouseover="myFunction(event)"  onmouseout="normalImg(this)"  alt="Canada" style="width:100%">
+  <span class="popuptext" id="myPopup"> Name : Canada  <br />Game : Winter Olympics <br />Sport/Type : Curling/Indoor</span>
+   </div>
+ </div>
+  
+  
+  
+  
+ <div class="column">
+   <div class="popup">
+  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1200px-Flag_of_Sweden.svg.png" onclick="myFunction(event)" alt="Sweden" style="width:100%">
+  <span class="popuptext" id="myPopup">Name : Sweden  <br />Game : Winter Olympics <br />Sport/Type : Curling/Indoor</span>
+   </div>
+ </div>
  
-            
+  
+<div class="column">
+   <div class="popup">
+  <img src="https://cdn.britannica.com/68/7068-004-7848FEB4/Flag-Canada.jpg" onclick="myFunction(event)" alt="Canada" style="width:100%">
+  <span class="popuptext" id="myPopup">Popup text...</span>
+   </div>
+ </div>
+  
+  
+ <div class="column">
+   <div class="popup">
+  <img src="https://cdn.britannica.com/68/7068-004-7848FEB4/Flag-Canada.jpg" onclick="myFunction(event)" alt="Canada" style="width:100%">
+  <span class="popuptext" id="myPopup">Popup text...</span>
+   </div>
+ </div>
 
+</div>
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
 
-        </dl>
-         
+// Declare a loop variable
+var i;
 
-    </div>
+// Full-width images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "100%";  // IE10
+    elements[i].style.flex = "100%";
+  }
+}
+
+// Two images side by side
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+// Four images side by side
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 
 </body>
-
 </html>

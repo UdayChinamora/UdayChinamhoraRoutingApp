@@ -23,7 +23,7 @@ namespace UdayChinhamoraWebsite.Controllers
 
         public ActionResult County()//We'll set the ViewBag values in this action
         {
-            ViewBag.Title = "Put your page title here";
+            ViewBag.Title = "Olympics Games";
             ViewBag.Description = "Put your page description here";
 
             ViewBag.UserNow = new User()
