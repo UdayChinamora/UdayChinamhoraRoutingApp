@@ -28,6 +28,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/uchin/source/repos/ex-starts/WebApplication3/WebApplication3/Views/Home/County.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb3VudHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/uchin/source/repos/ex-starts/WebApplication3/WebApplication3/Views/Home/displayCountries.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxkaXNwbGF5Q291bnRyaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/uchin/source/repos/ex-starts/WebApplication3/WebApplication3/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

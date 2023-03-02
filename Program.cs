@@ -26,6 +26,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
     name: "contact",
     pattern: "{controller=Home}/{action=Contact}/{id}");
 
@@ -34,9 +38,7 @@ app.MapControllerRoute(
     name: "students",
     pattern: "{controller=Student}/{action=Student}/{accessLevel?}");
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 
 

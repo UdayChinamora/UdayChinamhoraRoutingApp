@@ -19,11 +19,29 @@ namespace UdayChinhamoraWebsite.Controllers
         {
             return View();
         }
-
+   
         public IActionResult Privacy()
         {
             return View();
         }
+
+
+        [Route("/displayCountries")]
+        public IActionResult displayCountries()
+        {
+            ViewBag.Title = "Put your page title here";
+            ViewBag.Description = "Put your page description here";
+
+            ViewBag.UserNow = new User()
+            {
+                Name = "Your Name",
+                ID = 4,
+              
+            };
+
+            return View("/Views/Home/displayCountries.cshtml");
+        }
+
         public IActionResult About()
         {
             return View();
@@ -76,6 +94,25 @@ namespace UdayChinhamoraWebsite.Controllers
             students.Add(student4);
 
             return View(students);
+        }
+
+     
+
+
+
+
+        public ActionResult County()//We'll set the ViewBag values in this action
+        {
+            ViewBag.Title = "Put your page title here";
+            ViewBag.Description = "Put your page description here";
+
+            ViewBag.UserNow = new User()
+            {
+                Name = "Your Name",
+                ID = 4,
+            };
+
+            return View();
         }
 
 
