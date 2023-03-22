@@ -29,3 +29,6 @@ C:\Users\uchin\source\repos\ex-starts\WebApplication3\WebApplication3\obj\Debug\
 C:\Users\uchin\source\repos\ex-starts\WebApplication3\WebApplication3\obj\Debug\net6.0\UdayChinhamoraWebsite.pdb
 C:\Users\uchin\source\repos\ex-starts\WebApplication3\WebApplication3\obj\Debug\net6.0\UdayChinhamoraWebsite.genruntimeconfig.cache
 C:\Users\uchin\source\repos\ex-starts\WebApplication3\WebApplication3\obj\Debug\net6.0\ref\UdayChinhamoraWebsite.dll
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\WebApplication3\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\WebApplication3\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\WebApplication3\obj\Debug\net6.0\UdayChinhamoraWebsite.csproj.CopyComplete
