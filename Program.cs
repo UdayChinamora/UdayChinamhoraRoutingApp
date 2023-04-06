@@ -40,9 +40,7 @@ app.MapControllerRoute(
 
 
 
-app.MapControllerRoute(
-    name: "tickets",
-    pattern: "{controller=Home}/{action=tickets}/{id}");
+
 
 
 

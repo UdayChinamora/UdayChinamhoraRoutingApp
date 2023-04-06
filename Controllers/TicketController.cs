@@ -20,12 +20,9 @@ namespace UdayChinhamoraWebsite.Controllers
         public TicketController(TicketContext ctx) => context = ctx; // dbcontext injection
 
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+      
 
-        public IActionResult tickets(string id)
+        public IActionResult Index(string id)
         {
             var filters = new Filters(id);
             ViewBag.Filters = filters;
@@ -66,7 +63,7 @@ namespace UdayChinhamoraWebsite.Controllers
             {
                 context.Tickets.Add(newticket); // Add ticket
                 context.SaveChanges();
-                return RedirectToAction("tickets"); // Return to Home Page
+                return RedirectToAction("Index"); // Return to Home Page
             }
             // If there are validation errors
             else
@@ -79,7 +76,7 @@ namespace UdayChinhamoraWebsite.Controllers
         public IActionResult Filter(string[] filter)
         {
             string id = string.Join('-', filter);
-            return RedirectToAction("tickets", new { Id = id });
+            return RedirectToAction("Index", new { Id = id });
         }
 
         [HttpPost]
@@ -95,7 +92,7 @@ namespace UdayChinhamoraWebsite.Controllers
                 selected = context.Tickets.ToList().Find(x => x.Id == selected.Id);
                 selected.StatusId = newStatusId;
             }
-            return RedirectToAction("tickets", new { Id = id });
+            return RedirectToAction("Index", new { Id = id });
         }
     }
 }
