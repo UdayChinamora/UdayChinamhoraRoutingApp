@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 using System.Net.Sockets;
-using Microsoft.AspNetCore.Mvc;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -14,13 +14,30 @@ using UdayChinhamoraWebsite.Models;
 
 namespace UdayChinhamoraWebsite.Controllers
 {
+    [Route("api/Ticket")]
     public class TicketController : Controller
     {
         private TicketContext context;
+        private ITicketRepository ticketRepository { get; set; }
         public TicketController(TicketContext ctx) => context = ctx; // dbcontext injection
 
+        public TicketController(ITicketRepository ticketRepository)
+        {
+            this.ticketRepository = ticketRepository;
+        }
 
-      
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            TicketRepository ticketRepository = new TicketRepository();
+            List<Ticket> tickets = ticketRepository.GetTickets();
+
+            return Ok(tickets);
+        }
+
 
         public IActionResult Index(string id)
         {
