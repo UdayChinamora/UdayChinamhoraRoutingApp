@@ -22,6 +22,6 @@ namespace UdayChinhamoraWebsite.Models
         public string Description { get; set; }
         [Required(ErrorMessage = "Please select a status for the ticket.")]
         public string StatusId { get; set; }
-        public Status Status { get; set; } 
+        public string Status { get; set; } 
     }
 }

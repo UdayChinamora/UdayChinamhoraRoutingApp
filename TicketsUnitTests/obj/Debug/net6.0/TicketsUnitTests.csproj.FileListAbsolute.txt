@@ -1,0 +1,6 @@
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\TicketsUnitTests\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\TicketsUnitTests\obj\Debug\net6.0\TicketsUnitTests.csproj.AssemblyReference.cache
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\TicketsUnitTests\obj\Debug\net6.0\TicketsUnitTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\TicketsUnitTests\obj\Debug\net6.0\TicketsUnitTests.AssemblyInfoInputs.cache
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\TicketsUnitTests\obj\Debug\net6.0\TicketsUnitTests.AssemblyInfo.cs
+C:\Users\uchin\source\repos\ex-starts\WebApplication3\TicketsUnitTests\obj\Debug\net6.0\TicketsUnitTests.csproj.CoreCompileInputs.cache
