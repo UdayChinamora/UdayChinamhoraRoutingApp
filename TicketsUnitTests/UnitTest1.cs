@@ -104,9 +104,13 @@ namespace TicketsUnitTests
             };
             _controller.Create(ticket);
             _mockRepo.Verify(x => x.CreateTicket(It.IsAny<Ticket>()), Times.Once);
+            Assert.Equal(tic.Id, ticket.Id);
             Assert.Equal(tic.Name, ticket.Name);
-            Assert.Equal(tic.Age, ticket.Age);
-            Assert.Equal(tic.AccountNumber, ticket.AccountNumber);
+            Assert.Equal(tic.SprintNum, ticket.SprintNum);
+            Assert.Equal(tic.PointVal, ticket.PointVal);
+            Assert.Equal(tic.Description, ticket.Description);
+            Assert.Equal(tic.StatusId, ticket.StatusId);
+            Assert.Equal(tic.Status, ticket.Status);
         }
     }
 }
