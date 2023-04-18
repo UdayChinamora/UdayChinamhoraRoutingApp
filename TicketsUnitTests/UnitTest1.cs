@@ -19,7 +19,7 @@ namespace TicketsUnitTests
         public void CreateTicketRequiredLastName()
         {
             // Arrange
-            var ticket = new Ticket() { Id = 13, Name = " ", SprintNum = "12", PointVal = "35", Description = "ndgterwrwerwewrewrwewreeqreew", StatusId = "2346" }; ;
+            var ticket = new Ticket() { Id = 13, Name = " ", SprintNum = "12", PointVal = "35", Description = "ndgterwrwerwewrewrwewreeqreew", StatusId = "2346", Status = "ghdg" }; ;
 
             // Act
             var result = _service.CreateTicket(ticket);
@@ -96,11 +96,10 @@ namespace TicketsUnitTests
                 SprintNum = "13",
                 PointVal = "32",
                 Description = "nxbdhbfbfeoog8effe8vjhbkjfbvbfvbdbfv",
-                Status = "hgt",
-                StatusId ="787"
-                
+                StatusId ="787",
+                Status = "hgt"
 
-              
+
             };
             _controller.Create(ticket);
             _mockRepo.Verify(x => x.CreateTicket(It.IsAny<Ticket>()), Times.Once);

@@ -1,18 +1,23 @@
 ﻿
+//Created by Uday Chinhamora
+//18 April 2023
+//Website Add Tag Helper & View Components
+
+//Add a view component for the status button (to do, in progress, quality assurance(qa), and done). 
 using Microsoft.AspNetCore.Mvc;
 
 using System.Linq;
 
 using UdayChinhamoraWebsite.Models;
 
-namespace UdayChinhamoraWebsite.Views.Home.Components
+namespace UdayChinhamoraWebsite.Components
 {
-    //Status Drop Down is a view component which inherits ViewComponent class
-    public class StatusDropDown : ViewComponent
+    public class ViewComponentStatusButton :ViewComponent
     {
-        private TicketContext Context { get; set; }  
-        public StatusDropDown(TicketContext ctx) => Context = ctx; 
-        public IViewComponentResult Invoke(string selectedStatusValue) 
+
+        private TicketContext Context { get; set; }
+        public ViewComponentStatusButton(TicketContext ctx) => Context = ctx;
+        public IViewComponentResult Invoke(string selectedStatusValue)
         {
             var statuses = Context.Statuses.ToList().OrderBy(x => x.Name); // statuses is a list of statuses from the dbcontext ordered by name
             var viewModel = new StatusDropDownViewModel
@@ -25,4 +30,5 @@ namespace UdayChinhamoraWebsite.Views.Home.Components
         }
     }
 }
-
+    }
+}
