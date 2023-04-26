@@ -5,7 +5,7 @@
     <select asp-for="Statuses" class="form-control" asp-items="@(new SelectList(Model.Statuses, "Id", "Name", Model.SelectedStatus))">
         <option value="@Model.DefaultStatus">To-Do</option>
         <option value="@Model.Statuses">In progress</option>
-        <option value="@Model.Statuses.Name">Quality Assurance(qa)</option>
-        <option value="@Model.Statuses.Name">Done</option>
+        <option value="@Model.Statuses">Quality Assurance(qa)</option>
+        <option value="@Model.Statuses">Done</option>
     </select>
 </div>

@@ -57,7 +57,7 @@
                         <td>@ticket.SprintNum</td>
                         <td>@ticket.PointVal</td>
                         <td>@ticket.Description</td>
-                        <td>@ticket.Status.Name</td>
+                        <td>@ticket.Status</td>
                         <td>
                             <form asp-action="Edit" method="post" asp-route-id="@ViewBag.Filters.FilterString" class="mr-2">
                                 <input type="hidden" name="@nameof(Ticket.Id)" value="@ticket.Id">

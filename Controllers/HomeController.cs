@@ -53,6 +53,17 @@ namespace UdayChinhamoraWebsite.Controllers
             return View("/Views/Home/Contact.cshtml");
 
         }
+
+
+        [Route("/tickets")]
+        public IActionResult tickets()
+        {
+            return View("/Views/Home/tickets.cshtml");
+
+        }
+
+
+
         public IActionResult Admin()
         {
             return View();

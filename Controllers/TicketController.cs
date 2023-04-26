@@ -19,23 +19,23 @@ namespace UdayChinhamoraWebsite.Controllers
     {
         private TicketContext context;
         private ITicketRepository ticketRepository { get; set; }
-        public TicketController(TicketContext ctx) => context = ctx; // dbcontext injection
-
-        public TicketController(ITicketRepository ticketRepository)
+        public TicketController(TicketContext ctx)
         {
-            this.ticketRepository = ticketRepository;
+            context = ctx; // dbcontext injection
         }
+
+        public TicketController(ITicketRepository ticketRepository) => this.ticketRepository = ticketRepository;
 
 
 
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public Task<IActionResult> Get()
         {
             TicketRepository ticketRepository = new TicketRepository();
             List<Ticket> tickets = ticketRepository.GetTickets();
 
-            return Ok(tickets);
+            return Task.FromResult<IActionResult>(Ok(tickets));
         }
 
 
